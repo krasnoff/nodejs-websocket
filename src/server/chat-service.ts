@@ -13,7 +13,8 @@ function chatService(httpServer: HttpServer): void {
         console.log("One client has been connected.");
 
         subscription = motivationSentenceService().subscribe((data => {
-            socketIoServer.sockets.emit("random-sentence", data);
+            socket.emit("random-sentence", data);
+            // console.log("random-sentence", data);
         }));
 
         // 3. Listen to client messages: 

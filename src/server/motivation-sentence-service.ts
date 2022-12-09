@@ -21,7 +21,7 @@ function motivationSentenceService(): Observable<string> {
     const sentenceObervable: Observable<string> = new Observable((subscriber) => {
         setInterval(() => {
             subscriber.next(sentences[randomIntFromInterval(0, sentences.length - 1)]);
-        }, 1000);
+        }, 10000);
     });
 
     return sentenceObervable;
